@@ -1,0 +1,26 @@
+feed_one_two_enabled:
+  type: bool
+  default: true
+  description: "Enable two feeds on the homepage"
+feed_one_title:
+  type: string
+  default: "Custom List One"
+  description: "Title for left area of topics on homepage"
+feed_one_category:
+  type: list
+  list_type: category
+  default: ""
+  description: "Choose only ONE category for the Feed One topic list"
+feed_two_title:
+  type: string
+  default: "Custom List Two"
+  description: "Title for right area of topics on homepage"
+feed_two_category:
+  type: list
+  list_type: category
+  default: ""
+  description: "Choose only ONE category for the Feed Two topic list"
+max_list_length:
+  type: integer
+  default: 5
+  description: How many topics should appear in the custom lists?

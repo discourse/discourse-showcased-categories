@@ -1,0 +1,21 @@
+{{#if showTopicLists}}
+<h2>Featured Categories</h2>
+  <div class="custom-homepage-columns"> <!-- Two column homepage feed -->
+    <div class="col col-1">
+      <div class="header-wrapper">
+        <h2>{{themeSettings.feed_one_title}}</h2>
+        {{#d-button action="createListOneTopic" class="btn-primary btn"}}Post{{/d-button}}
+      </div>
+      {{topic-list topics=topicListOne showPosters=true}}
+      <a href="c/{{topicListOneHref}}" class="btn btn-more">More</a>
+    </div>
+    <div class="col col-2">
+      <div class="header-wrapper">
+        <h2>{{themeSettings.feed_two_title}}</h2>
+        {{#d-button action="createListTwoTopic" class="btn-primary btn"}}Post{{/d-button}}
+      </div>
+      {{topic-list topics=topicListTwo showPosters=true}}
+      <a href="c/{{topicListTwoHref}}" class="btn btn-more">More</a>
+    </div>
+  </div>
+{{/if}}
