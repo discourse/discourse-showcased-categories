@@ -13,8 +13,7 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-    console.log('hello')
-
+    
     if (Category.list().length == 0) return false;
 
     let categoryOne = Category.findById(settings.feed_one_category);
@@ -106,7 +105,7 @@ export default Component.extend({
   @discourseComputed("router.currentURL")
   showTopicLists(currentURL) {
     if (settings.feed_one_category && settings.feed_two_category && Category.list().length !== 0) {
-      return currentURL === "/";
+      return currentURL.split("?")[0] === "/";
     } else {
       return false;
     }
