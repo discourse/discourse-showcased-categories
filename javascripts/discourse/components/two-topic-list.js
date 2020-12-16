@@ -17,7 +17,7 @@ export default Component.extend({
 
     if (Category.list().length == 0) return false;
 
-    let categoryOne = Category.findById(settings.feed_two_category);
+    let categoryOne = Category.findById(settings.feed_one_category);
     let hrefOne = 'c/';
 
     if (!categoryOne) return false;

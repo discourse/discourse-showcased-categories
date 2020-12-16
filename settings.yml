@@ -2,6 +2,10 @@ feed_one_two_enabled:
   type: bool
   default: true
   description: "Enable two feeds on the homepage"
+featured_topic_lists_title:
+  type: string
+  default: "Featured Topic Lists"
+  description: "Title for featured topic lists section"
 feed_one_title:
   type: string
   default: "Custom List One"
