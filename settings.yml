@@ -4,8 +4,8 @@ feed_one_two_enabled:
   description: "Enable two feeds on the homepage"
 featured_topic_lists_title:
   type: string
-  default: "Featured Topic Lists"
-  description: "Title for featured topic lists section"
+  default: "Showcased Categories"
+  description: "Title for showcased categories lists section"
 feed_one_title:
   type: string
   default: "Custom List One"
