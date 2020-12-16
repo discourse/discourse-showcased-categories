@@ -105,7 +105,7 @@ export default Component.extend({
   @discourseComputed("router.currentURL")
   showTopicLists(currentURL) {
     if (settings.feed_one_category && settings.feed_two_category && Category.list().length !== 0) {
-      return currentURL.split("?") === "/";
+      return currentURL.split("?")[0] === "/";
     } else {
       return false;
     }
