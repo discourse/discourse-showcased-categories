@@ -1,6 +1,6 @@
-## Featured Topic Lists Theme Component
+## Showcased Categories Theme Component
 
-This theme component allows you to add two "Featured" topic lists to the top of your forum's home page.
+This theme component allows you to add two "Showcased" topic lists (built from your choice of two different categories) to the top of your forum's home page.
 
 <img src="./screenshots/Screen Shot 2020-12-15 at 3.54.54 PM.png">
 
