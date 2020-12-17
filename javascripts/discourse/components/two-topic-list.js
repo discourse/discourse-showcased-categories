@@ -30,11 +30,6 @@ export default Component.extend({
     ajax(hrefOne).then((result) => {
       let topicList = [];
       result.topic_list.topics.slice(0,settings.max_list_length).forEach((topic) => {
-        topic.posters.forEach((poster) => {
-          poster.user = $.grep(user, (e) => {
-            return e.id == poster.user_id;
-          })[0];
-        });
         topicList.push(Topic.create(topic));
       });
       if (topicList.length !== 0) {
@@ -56,11 +51,6 @@ export default Component.extend({
     ajax(hrefTwo).then((result) => {
       let topicList = [];
       result.topic_list.topics.slice(0,settings.max_list_length).forEach((topic) => {
-        topic.posters.forEach((poster) => {
-          poster.user = $.grep(user, (e) => {
-            return e.id == poster.user_id;
-          })[0];
-        });
         topicList.push(Topic.create(topic));
       });
       if (topicList.length !== 0) {
