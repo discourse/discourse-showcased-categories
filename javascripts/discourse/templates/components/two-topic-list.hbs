@@ -1,21 +1,6 @@
 {{#if showTopicLists}}
-<h2>{{themeSettings.featured_topic_lists_title}}</h2>
-  <div class="custom-homepage-columns"> <!-- Two column homepage feed -->
-    <div class="col col-1">
-      <div class="header-wrapper">
-        <h2>{{themeSettings.feed_one_title}}</h2>
-        {{#d-button action="createListOneTopic" class="btn-primary btn"}}Post{{/d-button}}
-      </div>
-      {{topic-list topics=topicListOne showPosters=true}}
-      <a href="c/{{topicListOneHref}}" class="btn btn-more">More</a>
-    </div>
-    <div class="col col-2">
-      <div class="header-wrapper">
-        <h2>{{themeSettings.feed_two_title}}</h2>
-        {{#d-button action="createListTwoTopic" class="btn-primary btn"}}Post{{/d-button}}
-      </div>
-      {{topic-list topics=topicListTwo showPosters=true}}
-      <a href="c/{{topicListTwoHref}}" class="btn btn-more">More</a>
-    </div>
+  <div class="wrap custom-homepage-columns"> <!-- Two column homepage feed -->
+    {{showcased-topic-list category=category1 classNames="col col-1" title=(theme-setting 'feed_one_title')}}
+    {{showcased-topic-list category=category2 classNames="col col-2" title=(theme-setting 'feed_two_title')}}
   </div>
 {{/if}}
