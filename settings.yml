@@ -27,4 +27,11 @@ feed_two_category:
 max_list_length:
   type: integer
   default: 5
-  description: How many topics should appear in the custom lists?
+  description: "How many topics should appear in the custom lists?"
+plugin_outlet:
+  type: enum
+  default: "above-main-container"
+  choices:
+    - "above-main-container"
+    - "below-site-header"
+  description: "Advanced setting for additional customization"

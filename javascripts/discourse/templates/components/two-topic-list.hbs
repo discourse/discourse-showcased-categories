@@ -1,4 +1,6 @@
 {{#if showTopicLists}}
+  {{plugin-outlet name="above-discourse-showcased-categories" tagName=""}}
+
   <div class="wrap custom-homepage-columns"> <!-- Two column homepage feed -->
     {{showcased-topic-list category=category1 classNames="col col-1" title=(theme-setting 'feed_one_title')}}
     {{showcased-topic-list category=category2 classNames="col col-2" title=(theme-setting 'feed_two_title')}}
