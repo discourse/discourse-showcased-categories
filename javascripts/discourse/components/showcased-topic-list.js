@@ -15,7 +15,7 @@ export default Component.extend({
     const filter = {
       filter: "latest",
       params: {
-        category: this.category.id,
+        tags: this.tag,
       },
     };
 

@@ -17,9 +17,17 @@ export default Component.extend({
     return Category.findById(settings.feed_one_category);
   },
 
+  get tag1() {
+    return settings.feed_one_tag;
+  },
+
   get category2() {
     if (!this.categoriesLoaded) return false;
     return Category.findById(settings.feed_two_category);
+  },
+
+  get tag2() {
+    return settings.feed_two_tag;
   },
 
   @discourseComputed("router.currentRouteName")
