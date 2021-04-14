@@ -79,27 +79,3 @@
     }
   }
 }
-
-// homepage banner
-
-.above-discourse-showcased-categories-outlet.custom-banner .row {
-  margin: 0 10px;
-}
-
-#banner {
-  height: auto;
-}
-
-#banner-content {
-  height: calc(100% - 1em);
-  margin: -1em -1em 0;
-  overflow: hidden !important;
-  p {
-    margin: 0;
-  }
-  img {
-    width: 100%;
-    height: auto;
-    margin-top: -1em;
-  }
-}
