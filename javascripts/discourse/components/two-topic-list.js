@@ -7,6 +7,21 @@ import { and } from "@ember/object/computed";
 
 export default Component.extend({
   router: service(),
+  tagName: "",
+
+  init() {
+    this._super(...arguments);
+    let showSidebar = settings.show_as_sidebar && this.router.currentRouteName == "discovery.latest";
+
+    // this is not ideal, but in order to add + remove classes to
+    // the body, I would need to create another nested level of the
+    // component to handle willDestroyElement appropriately
+    if (showSidebar) {
+      document.body.classList.add('showcased-categories-sidebar');
+    } else {
+      document.body.classList.remove('showcased-categories-sidebar')
+    }
+  },
 
   get categoriesLoaded() {
     return Category.list().length !== 0;
@@ -23,9 +38,10 @@ export default Component.extend({
   },
 
   @discourseComputed("router.currentRouteName")
-  isHomepage(currentRouteName) {
-    return currentRouteName == `discovery.${defaultHomepage()}`;
+  shouldShow(currentRouteName) {
+    let showSidebar = settings.show_as_sidebar && currentRouteName == "discovery.latest";
+    return currentRouteName == `discovery.${defaultHomepage()}` || showSidebar;
   },
 
-  showTopicLists: and("isHomepage", "category1", "category2"),
+  showTopicLists: and("shouldShow", "category1", "category2"),
 });

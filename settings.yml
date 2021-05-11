@@ -1,7 +1,7 @@
-feed_one_two_enabled:
+show_as_sidebar:
   type: bool
-  default: true
-  description: "Enable two feeds on the homepage"
+  default: false
+  description: "If enabled, the showcased categories will only be rendered in a sidebar on the latest page."
 featured_topic_lists_title:
   type: string
   default: "Showcased Categories"
