@@ -10,16 +10,16 @@ export default Component.extend({
   tagName: "",
 
   init() {
-    this._super(...arguments);
-    let showSidebar = settings.show_as_sidebar && this.router.currentRouteName == "discovery.latest";
-
-    // this is not ideal, but in order to add + remove classes to
-    // the body, I would need to create another nested level of the
-    // component to handle willDestroyElement appropriately
-    if (showSidebar) {
+    this._super(...arguments)
+    if (settings.show_as_sidebar && this.shouldShow) {
       document.body.classList.add('showcased-categories-sidebar');
-    } else {
-      document.body.classList.remove('showcased-categories-sidebar')
+    }
+  },
+
+  willDestroyElement() {
+    this._super(...arguments);
+    if (settings.show_as_sidebar) {
+      document.body.classList.remove('showcased-categories-sidebar');
     }
   },
 
@@ -39,8 +39,8 @@ export default Component.extend({
 
   @discourseComputed("router.currentRouteName")
   shouldShow(currentRouteName) {
-    let showSidebar = settings.show_as_sidebar && currentRouteName == "discovery.latest";
-    return currentRouteName == `discovery.${defaultHomepage()}` || showSidebar;
+    let showSidebar = settings.show_as_sidebar && currentRouteName === "discovery.latest";
+    return currentRouteName === `discovery.${defaultHomepage()}` || showSidebar;
   },
 
   showTopicLists: and("shouldShow", "category1", "category2"),
