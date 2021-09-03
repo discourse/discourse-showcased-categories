@@ -1,6 +1,6 @@
 import Component from "@ember/component";
 import Category from "discourse/models/category";
-import discourseComputed from "discourse-common/utils/decorators";
+import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import { inject as service } from "@ember/service";
 import { defaultHomepage } from "discourse/lib/utilities";
 import { and } from "@ember/object/computed";
@@ -9,17 +9,22 @@ export default Component.extend({
   router: service(),
   tagName: "",
 
-  init() {
-    this._super(...arguments)
-    if (settings.show_as_sidebar && this.shouldShow) {
-      document.body.classList.add('showcased-categories-sidebar');
-    }
+  didInsertElement() {
+    this._super(...arguments);
+    this._updateBodyClasses();
   },
-
   willDestroyElement() {
     this._super(...arguments);
-    if (settings.show_as_sidebar) {
-      document.body.classList.remove('showcased-categories-sidebar');
+    this._updateBodyClasses();
+  },
+
+  @observes("shouldShow")
+  _updateBodyClasses() {
+    const shouldCleanup = this.isDestroying || this.isDestroyed;
+    if (!shouldCleanup && this.shouldShow && settings.show_as_sidebar) {
+      document.body.classList.add("showcased-categories-sidebar");
+    } else {
+      document.body.classList.remove("showcased-categories-sidebar");
     }
   },
 
@@ -39,9 +44,10 @@ export default Component.extend({
 
   @discourseComputed("router.currentRouteName")
   shouldShow(currentRouteName) {
-    let showSidebar = settings.show_as_sidebar && currentRouteName === "discovery.latest";
+    let showSidebar =
+      settings.show_as_sidebar && currentRouteName === "discovery.latest";
     return currentRouteName === `discovery.${defaultHomepage()}` || showSidebar;
   },
 
-  showTopicLists: and("shouldShow", "category1", "category2"),
+  showTopicLists: and("shouldShow", "category1", "category2")
 });
