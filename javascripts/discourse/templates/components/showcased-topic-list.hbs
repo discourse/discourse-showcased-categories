@@ -2,5 +2,7 @@
   <h2>{{title}}</h2>
   {{#d-button action=createTopic class="btn-primary btn"}}Post{{/d-button}}
 </div>
-{{topic-list topics=topicList showPosters=false}}
+{{#conditional-loading-spinner condition=isLoading}}
+  {{topic-list topics=topicList showPosters=false}}
+{{/conditional-loading-spinner}}
 <a href="{{moreHref}}" class="btn btn-more">More</a>

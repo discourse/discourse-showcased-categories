@@ -19,11 +19,15 @@ export default Component.extend({
       },
     };
 
+    this.set("isLoading", true)
+
     this.store.findFiltered("topicList", filter).then((topicList) => {
       this.set(
         "topicList",
         topicList.topics.slice(0, settings.max_list_length)
       );
+
+      this.set("isLoading", false)
     });
   },
 

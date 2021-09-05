@@ -27,6 +27,8 @@ feed_two_category:
 max_list_length:
   type: integer
   default: 5
+  min: 1
+  max: 5
   description: "How many topics should appear in the custom lists?"
 plugin_outlet:
   type: enum
