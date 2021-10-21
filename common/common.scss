@@ -54,19 +54,22 @@
   .topic-list {
     // Hides extra details in topic feeds
     margin-bottom: 1em;
-    thead,
-    td.posts-map,
-    td.num.views,
-    td.category {
+    > :first-child,
+    .posts-map,
+    .num.views,
+    .category {
       display: none;
     }
-    tbody {
+    > :nth-child(2) {
       border: none;
     }
-    tr:nth-child(odd) {
+    .topic-list-item:nth-child(odd) {
       background: var(--primary-very-low);
     }
-    td.posters {
+    .topic-list-item {
+      height: #{$topic-height}px;
+    }
+    .posters {
       a {
         display: none;
         &:last-of-type {
