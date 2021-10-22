@@ -54,13 +54,13 @@
   .topic-list {
     // Hides extra details in topic feeds
     margin-bottom: 1em;
-    > :first-child,
+    > :first-child, // targets thead, which will change to `<div class="topic-list-header"....
     .posts-map,
     .num.views,
     .category {
       display: none;
     }
-    > :nth-child(2) {
+    > :nth-child(2) { // targets tbody, which will change to `<div class="topic-list-body"....
       border: none;
     }
     .topic-list-item:nth-child(odd) {
