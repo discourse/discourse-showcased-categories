@@ -1,3 +1,5 @@
+$topic-height: 70;
+
 .custom-homepage-columns {
   // Two column section with post feeds
   display: flex;
@@ -12,6 +14,10 @@
 
   .btn {
     line-height: unset;
+  }
+
+  .loading-container {
+    min-height: calc(#{$topic-height}px * 3);
   }
 
   @media screen and (max-width: 750px) {
@@ -60,7 +66,7 @@
     .category {
       display: none;
     }
-    > .topic-list-body {
+    > .topic-list-body { 
       border: none;
     }
     .topic-list-item:nth-child(odd) {

@@ -1,7 +1,7 @@
-feed_one_two_enabled:
+show_as_sidebar:
   type: bool
-  default: true
-  description: "Enable two feeds on the homepage"
+  default: false
+  description: "If enabled, the showcased categories will only be rendered in a sidebar on the latest page."
 featured_topic_lists_title:
   type: string
   default: "Showcased Categories"
@@ -27,4 +27,13 @@ feed_two_category:
 max_list_length:
   type: integer
   default: 5
-  description: How many topics should appear in the custom lists?
+  min: 1
+  max: 5
+  description: "How many topics should appear in the custom lists?"
+plugin_outlet:
+  type: enum
+  default: "above-main-container"
+  choices:
+    - "above-main-container"
+    - "below-site-header"
+  description: "Advanced setting for additional customization"

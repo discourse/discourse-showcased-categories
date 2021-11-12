@@ -6,7 +6,6 @@ import { readOnly } from "@ember/object/computed";
 
 export default Component.extend({
   moreHref: readOnly("category.url"),
-  router: service(),
 
   init() {
     this._super(...arguments);
@@ -20,8 +19,15 @@ export default Component.extend({
       },
     };
 
+    this.set("isLoading", true)
+
     this.store.findFiltered("topicList", filter).then((topicList) => {
-      this.set("topicList", topicList.topics.slice(0, 5));
+      this.set(
+        "topicList",
+        topicList.topics.slice(0, settings.max_list_length)
+      );
+
+      this.set("isLoading", false)
     });
   },
 
