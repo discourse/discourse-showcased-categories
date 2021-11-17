@@ -60,22 +60,22 @@ $topic-height: 70;
   .topic-list {
     // Hides extra details in topic feeds
     margin-bottom: 1em;
-    thead,
-    td.posts-map,
-    td.num.views,
-    td.category {
+    > .topic-list-header,
+    .posts-map,
+    .num.views,
+    .category {
       display: none;
     }
-    tbody {
+    > .topic-list-body { 
       border: none;
     }
-    tr:nth-child(odd) {
+    .topic-list-item:nth-child(odd) {
       background: var(--primary-very-low);
     }
     .topic-list-item {
       height: #{$topic-height}px;
     }
-    td.posters {
+    .posters {
       a {
         display: none;
         &:last-of-type {
