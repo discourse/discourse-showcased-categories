@@ -2,10 +2,6 @@ show_as_sidebar:
   type: bool
   default: false
   description: "If enabled, the showcased categories will only be rendered in a sidebar on the latest page."
-featured_topic_lists_title:
-  type: string
-  default: "Showcased Categories"
-  description: "Title for showcased categories lists section"
 feed_one_title:
   type: string
   default: "Custom List One"
