@@ -33,12 +33,12 @@ export default Component.extend({
   },
 
   get category1() {
-    if (!this.categoriesLoaded) return false;
+    if (!this.categoriesLoaded) {return false;}
     return Category.findById(settings.feed_one_category);
   },
 
   get category2() {
-    if (!this.categoriesLoaded) return false;
+    if (!this.categoriesLoaded) {return false;}
     return Category.findById(settings.feed_two_category);
   },
 
