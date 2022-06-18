@@ -1,8 +1,15 @@
 <div class="header-wrapper">
   <h2>{{title}}</h2>
-  {{#d-button action=createTopic class="btn-primary btn"}}{{theme-i18n "showcased_categories.new_post"}}{{/d-button}}
+
+  {{#d-button action=createTopic class="btn-primary btn"}}
+    {{theme-i18n "showcased_categories.new_post"}}
+  {{/d-button}}
 </div>
+
 {{#conditional-loading-spinner condition=isLoading}}
   {{topic-list topics=topicList showPosters=false}}
 {{/conditional-loading-spinner}}
-<a href="{{moreHref}}" class="btn btn-more">{{theme-i18n "showcased_categories.view_more"}}</a>
+
+<a href={{moreHref}} class="btn btn-more">
+  {{theme-i18n "showcased_categories.view_more"}}
+</a>
