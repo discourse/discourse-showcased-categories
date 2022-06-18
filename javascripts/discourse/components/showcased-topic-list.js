@@ -9,7 +9,9 @@ export default Component.extend({
   init() {
     this._super(...arguments);
 
-    if (!this.category) {return;}
+    if (!this.category) {
+      return;
+    }
 
     const filter = {
       filter: "latest",

@@ -33,12 +33,16 @@ export default Component.extend({
   },
 
   get category1() {
-    if (!this.categoriesLoaded) {return false;}
+    if (!this.categoriesLoaded) {
+      return false;
+    }
     return Category.findById(settings.feed_one_category);
   },
 
   get category2() {
-    if (!this.categoriesLoaded) {return false;}
+    if (!this.categoriesLoaded) {
+      return false;
+    }
     return Category.findById(settings.feed_two_category);
   },
 
@@ -49,5 +53,5 @@ export default Component.extend({
     return currentRouteName === `discovery.${defaultHomepage()}` || showSidebar;
   },
 
-  showTopicLists: and("shouldShow", "category1", "category2")
+  showTopicLists: and("shouldShow", "category1", "category2"),
 });
