@@ -47,8 +47,9 @@ $topic-height: 70;
     background-color: var(--tertiary);
     color: var(--secondary);
     padding: 0.75em;
-    h2 {
+    a h2 {
       margin: 0;
+      color: var(--secondary);
     }
     button {
       margin-left: auto;
