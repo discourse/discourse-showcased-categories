@@ -9,14 +9,18 @@ export default Component.extend({
   init() {
     this._super(...arguments);
 
-    if (!this.category) {
+    const tags = this.tags.length > 0 ? this.tags : "";
+    const category = this.category ? this.category.id : "";
+
+    if (!this.category && !tags) {
       return;
     }
 
     const filter = {
       filter: "latest",
       params: {
-        category: this.category.id,
+        category,
+        tags,
       },
     };
 
@@ -38,7 +42,7 @@ export default Component.extend({
       getOwner(this).lookup("controller:composer").open({
         action: "createTopic",
         draftKey: "createTopic",
-        categoryId: this.category.id,
+        categoryId: this.category?.id,
       });
     } else {
       this.router.transitionTo("login");

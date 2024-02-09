@@ -11,6 +11,11 @@ feed_one_category:
   list_type: category
   default: ""
   description: "Choose only ONE category for the Feed One topic list"
+feed_one_tag:
+  type: list
+  list_type: tag
+  default: ""
+  description: "optional tags"
 feed_two_title:
   type: string
   default: "Custom List Two"
@@ -20,6 +25,11 @@ feed_two_category:
   list_type: category
   default: ""
   description: "Choose only ONE category for the Feed Two topic list"
+feed_two_tag:
+  type: list
+  list_type: tag
+  default: ""
+  description: "optional tags"
 max_list_length:
   type: integer
   default: 5
