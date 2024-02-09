@@ -11,7 +11,7 @@ export default Component.extend({
 
     const tags = this.tags.length > 0 ? this.tags : "";
     const category = this.category ? this.category.id : "";
-    
+
     if (!this.category && !tags) {
       return;
     }
@@ -20,7 +20,7 @@ export default Component.extend({
       filter: "latest",
       params: {
         category,
-        tags
+        tags,
       },
     };
 

@@ -39,8 +39,8 @@ export default Component.extend({
   },
 
   get tags1() {
-    return settings.feed_one_tag.split("|").filter(tag => tag.trim() !== "");
-    },
+    return settings.feed_one_tag.split("|").filter((tag) => tag.trim() !== "");
+  },
 
   get category2() {
     if (!this.categoriesLoaded) {
@@ -50,8 +50,8 @@ export default Component.extend({
   },
 
   get tags2() {
-    return settings.feed_two_tag.split("|").filter(tag => tag.trim() !== "");
-    },
+    return settings.feed_two_tag.split("|").filter((tag) => tag.trim() !== "");
+  },
 
   @discourseComputed("router.currentRouteName")
   shouldShow(currentRouteName) {
@@ -60,8 +60,12 @@ export default Component.extend({
     return currentRouteName === `discovery.${defaultHomepage()}` || showSidebar;
   },
 
-  @discourseComputed('shouldShow', 'category1', 'category2', 'tags1', 'tags2')
+  @discourseComputed("shouldShow", "category1", "category2", "tags1", "tags2")
   showTopicLists(shouldShow, category1, category2, tags1, tags2) {
-    return shouldShow && (category1 || (tags1.length > 0)) && (category2 || (tags2.length > 0));
-  }
+    return (
+      shouldShow &&
+      (category1 || tags1.length > 0) &&
+      (category2 || tags2.length > 0)
+    );
+  },
 });
