@@ -3,7 +3,6 @@ import Category from "discourse/models/category";
 import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import { inject as service } from "@ember/service";
 import { defaultHomepage } from "discourse/lib/utilities";
-import { and } from "@ember/object/computed";
 
 export default Component.extend({
   router: service(),
@@ -39,12 +38,20 @@ export default Component.extend({
     return Category.findById(settings.feed_one_category);
   },
 
+  get tags1() {
+    return settings.feed_one_tag.split("|").filter(tag => tag.trim() !== "");
+    },
+
   get category2() {
     if (!this.categoriesLoaded) {
       return false;
     }
     return Category.findById(settings.feed_two_category);
   },
+
+  get tags2() {
+    return settings.feed_two_tag.split("|").filter(tag => tag.trim() !== "");
+    },
 
   @discourseComputed("router.currentRouteName")
   shouldShow(currentRouteName) {
@@ -53,5 +60,8 @@ export default Component.extend({
     return currentRouteName === `discovery.${defaultHomepage()}` || showSidebar;
   },
 
-  showTopicLists: and("shouldShow", "category1", "category2"),
+  @discourseComputed('shouldShow', 'category1', 'category2', 'tags1', 'tags2')
+  showTopicLists(shouldShow, category1, category2, tags1, tags2) {
+    return shouldShow && (category1 || (tags1.length > 0)) && (category2 || (tags2.length > 0));
+  }
 });
