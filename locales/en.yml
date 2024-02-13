@@ -2,3 +2,14 @@ en:
   showcased_categories:
     new_post: "Post"
     view_more: "More"
+  theme_metadata:
+    settings:
+      show_as_sidebar: "If enabled, the showcased categories will only be rendered in a sidebar on the latest page."
+      feed_one_title: "Title for first feed of topics"
+      feed_one_category: "Single category to source topics from"
+      feed_one_tag: "Optionally source topics from multiple tags, can be combined with a category"
+      feed_two_title: "Title for the second feed of topics"
+      feed_two_category: "Single category to source topics from"
+      feed_two_tag: "Optionally source topics from multiple tags, can be combined with a category"
+      max_list_length: "Number of topics to show in each feed (1-5)"
+      plugin_outlet: "Advanced setting for changing position of theme component"

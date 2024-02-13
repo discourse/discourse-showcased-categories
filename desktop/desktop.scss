@@ -11,7 +11,7 @@
     }
   }
 
-  .two-topic-list-sidebar .custom-homepage-columns {
+  .custom-homepage-columns {
     width: calc(100% - 1em);
     padding: 0;
     display: flex;
@@ -19,25 +19,24 @@
     margin: 3.5em 0 0 1em;
     .col {
       width: 100%;
-      margin: 0 0 2em 0;
       display: flex;
       flex-direction: column;
       .header-wrapper {
         align-items: center;
         h2 {
-          font-size: $font-down-1;
-          margin: 0 !important;
+          font-size: var(--font-down-1);
+          margin: 0 !important; // overrides id selector from core
         }
         .btn-primary {
-          font-size: $font-down-1;
+          font-size: var(--font-down-1);
           padding: 0.25em 0.4em;
         }
       }
       .topic-list {
-        font-size: $font-down-2;
+        font-size: var(--font-down-2);
       }
       .btn-more {
-        font-size: $font-down-1;
+        font-size: var(--font-down-1);
         padding: 0.25em 0.4em;
         margin-left: auto;
       }

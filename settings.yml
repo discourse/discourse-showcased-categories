@@ -1,45 +1,38 @@
 show_as_sidebar:
   type: bool
+  refresh: true
   default: false
-  description: "If enabled, the showcased categories will only be rendered in a sidebar on the latest page."
 feed_one_title:
   type: string
   default: "Custom List One"
-  description: "Title for left area of topics on homepage"
 feed_one_category:
   type: list
   list_type: category
   default: ""
-  description: "Choose only ONE category for the Feed One topic list"
 feed_one_tag:
   type: list
   list_type: tag
   default: ""
-  description: "optional tags"
 feed_two_title:
   type: string
   default: "Custom List Two"
-  description: "Title for right area of topics on homepage"
 feed_two_category:
   type: list
   list_type: category
   default: ""
-  description: "Choose only ONE category for the Feed Two topic list"
 feed_two_tag:
   type: list
   list_type: tag
   default: ""
-  description: "optional tags"
 max_list_length:
   type: integer
   default: 5
   min: 1
   max: 5
-  description: "How many topics should appear in the custom lists?"
 plugin_outlet:
   type: enum
   default: "above-main-container"
+  refresh: true
   choices:
     - "above-main-container"
     - "below-site-header"
-  description: "Advanced setting for additional customization"
