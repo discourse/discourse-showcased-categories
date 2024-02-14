@@ -3,7 +3,7 @@
 RSpec.describe "Showcased Categories", system: true do
   let!(:theme) { upload_theme_component }
 
-  fab!(:user) { Fabricate(:user) }
+  fab!(:user)
 
   fab!(:category1) { Fabricate(:category)}
   fab!(:category2) { Fabricate(:category)}
