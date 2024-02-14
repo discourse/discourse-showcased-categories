@@ -17,8 +17,8 @@ export default class ShowcasedTopicList extends Component {
 
   @tracked isLoading = true;
   @tracked topicList;
-  @tracked tags = this.args.tags.length > 0 ? this.args.tags : "";
-  @tracked category = this.args.category;
+  tags = this.args.tags.length > 0 ? this.args.tags : "";
+  category = this.args.category;
 
   get moreHref() {
     const encodedTags = this.tags?.join("%2C") : "";
