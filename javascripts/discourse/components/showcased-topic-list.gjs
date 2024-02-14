@@ -21,7 +21,7 @@ export default class ShowcasedTopicList extends Component {
   category = this.args.category;
 
   get moreHref() {
-    const encodedTags = this.tags?.join("%2C") || "";
+    const encodedTags = this.tags ? this.tags.join("%2C") : "";
 
     if (this.category && !this.tags) {
       return this.category.url;
