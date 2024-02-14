@@ -21,26 +21,21 @@ export default class ShowcasedTopicList extends Component {
   @tracked category = this.args.category;
 
   get moreHref() {
-    let href = "";
-    const hasCategory = !!this.category;
-    const hasTags = this.tags;
-    const encodedTags = hasTags ? this.tags.join("%2C") : "";
+    const encodedTags = this.tags?.join("%2C") : "";
 
-    if (hasCategory && !hasTags) {
-      href = this.category.url;
-    } else if (!hasCategory && hasTags) {
-      href =
-        this.tags.length > 1
-          ? `/search?expanded=true&q=tags%3A${encodedTags}`
-          : `/tag/${this.tags[0]}`;
-    } else if (hasCategory && hasTags) {
-      href =
-        this.tags.length === 1
-          ? `/tags/c/${this.category.slug}/${this.category.id}/${this.tags[0]}`
-          : `/search?expanded=true&q=%23${this.category.slug} tags%3A${encodedTags}`;
+    if (this.category && !this.tags) {
+      return this.category.url;
+    } else if (!this.category && this.tags) {
+      return this.tags.length > 1
+        ? `/search?expanded=true&q=tags%3A${encodedTags}`
+        : `/tag/${this.tags[0]}`;
+    } else if (this.category && this.tags) {
+      return this.tags.length === 1
+        ? `/tags/c/${this.category.slug}/${this.category.id}/${this.tags[0]}`
+        : `/search?expanded=true&q=%23${this.category.slug} tags%3A${encodedTags}`;
+    } else {
+      return "";
     }
-
-    return href;
   }
 
   @action
