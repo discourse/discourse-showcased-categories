@@ -34,7 +34,7 @@ export default class TwoTopicList extends Component {
 
   get shouldShow() {
     if (!this.showTopicLists) {
-      return;
+      return false;
     } else {
       let showSidebar =
         settings.show_as_sidebar &&
