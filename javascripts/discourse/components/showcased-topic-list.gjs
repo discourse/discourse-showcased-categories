@@ -14,6 +14,7 @@ export default class ShowcasedTopicList extends Component {
   @service composer;
   @service currentUser;
   @service router;
+
   @tracked isLoading = true;
   @tracked topicList;
   @tracked tags = this.args.tags.length > 0 ? this.args.tags : "";
