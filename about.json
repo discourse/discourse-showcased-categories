@@ -1,4 +1,6 @@
 {
   "name": "Showcased Categories",
-  "component": true
+  "component": true,
+  "license_url": "https://github.com/discourse/discourse-showcased-categories/blob/main/LICENSE",
+  "about_url": "https://meta.discourse.org/t/showcased-categories/173524"
 }
