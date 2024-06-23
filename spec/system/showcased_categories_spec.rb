@@ -158,5 +158,16 @@ RSpec.describe "Showcased Categories", system: true do
 
     expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/search?expanded=true&q=%23#{category1.slug} tags%3A#{tag1}%2C#{tag2}"})
   end
+
+  it "the more button href is for a category page ordered by top" do
+    theme.update_setting(:feed_one_category, "#{category1.id}")
+    theme.update_setting(:feed_two_category, "#{category2.id}")
+    theme.update_setting(:filter, "top")    
+    theme.save!
+
+    visit("/")
+
+    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "#{category1.url}/l/top"})
+  end
  
 end
