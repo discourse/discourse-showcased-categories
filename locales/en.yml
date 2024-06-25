@@ -5,6 +5,7 @@ en:
   theme_metadata:
     settings:
       show_as_sidebar: "If enabled, the showcased categories will only be rendered in a sidebar on the latest page."
+      filter: "Choose the topic list filter for the showcased topic lists"
       feed_one_title: "Title for first feed of topics"
       feed_one_category: "Single category to source topics from"
       feed_one_tag: "Optionally source topics from multiple tags, can be combined with a category"
