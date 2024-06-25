@@ -5,3 +5,6 @@
 # https://translate.discourse.org/
 
 he:
+  showcased_categories:
+    new_post: "פוסט"
+    view_more: "עוד"
