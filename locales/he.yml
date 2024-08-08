@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 he:
+  showcased_categories:
+    new_post: "פוסט"
+    view_more: "עוד"
+  theme_metadata:
+    settings:
+      max_list_length: "מספר הנושאים להצגה בכל ערוץ (1-‏5)"
+      plugin_outlet: "הגדרות מתקדמות להחלפת מקום של רכיבי ערכת עיצוב"
