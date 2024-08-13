@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 fr:
+  showcased_categories:
+    new_post: "Publication"
+    view_more: "Plus"
+  theme_metadata:
+    settings:
+      show_as_sidebar: "Si cette option est activée, les catégories présentées ne seront affichées que dans une barre latérale sur la dernière page."
+      feed_one_title: "Titre du premier fil de sujets"
+      feed_one_category: "Catégorie unique pour la recherche de sujets"
+      feed_one_tag: "Vous pouvez sélectionner des sujets à partir de plusieurs étiquettes et les combiner avec une catégorie"
+      feed_two_title: "Titre du deuxième fil de sujets"
+      feed_two_category: "Catégorie unique pour la recherche de sujets"
+      feed_two_tag: "Vous pouvez sélectionner des sujets à partir de plusieurs étiquettes et les combiner avec une catégorie"
+      max_list_length: "Nombre de sujets à afficher dans chaque fil (1 à 5)"
+      plugin_outlet: "Paramètre avancé pour modifier la position du composant du thème"

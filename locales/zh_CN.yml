@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 zh_CN:
+  showcased_categories:
+    new_post: "帖子"
+    view_more: "更多"
+  theme_metadata:
+    settings:
+      show_as_sidebar: "如果启用，展示的类别将仅在最新页面的边栏中呈现。"
+      feed_one_title: "话题的第一个 Feed 的标题"
+      feed_one_category: "可从中获取话题来源的单个类别"
+      feed_one_tag: "可以选择从多个标签获取话题来源，并且可以与类别相结合"
+      feed_two_title: "话题的第二个 Feed 的标题"
+      feed_two_category: "可从中获取话题来源的单个类别"
+      feed_two_tag: "可以选择从多个标签获取话题来源，并且可以与类别相结合"
+      max_list_length: "每个 Feed 中显示的话题数 (1-5)"
+      plugin_outlet: "用于更改主题组件位置的高级设置"
