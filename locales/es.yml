@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 es:
+  showcased_categories:
+    new_post: "Publicación"
+    view_more: "Más"
+  theme_metadata:
+    settings:
+      show_as_sidebar: "Si se activa, las categorías mostradas solo se mostrarán en una barra lateral en la última página."
+      feed_one_title: "Título del primer feed de temas"
+      feed_one_category: "Categoría única de la que extraer temas"
+      feed_one_tag: "Temas de origen opcionales de varias etiquetas, pueden combinarse con una categoría"
+      feed_two_title: "Título del segundo feed de temas"
+      feed_two_category: "Categoría única de la que extraer temas"
+      feed_two_tag: "Temas de origen opcionales de varias etiquetas, pueden combinarse con una categoría"
+      max_list_length: "Número de temas que se mostrarán en cada feed (1-5)"
+      plugin_outlet: "Configuración avanzada para cambiar la posición del componente del tema"

@@ -10,12 +10,12 @@ de:
     view_more: "Mehr"
   theme_metadata:
     settings:
-      show_as_sidebar: "Wenn diese Option aktiviert ist, werden die hervorgehobenen Kategorien nur in einer Seitenleiste auf der Seite \"Aktuell\" angezeigt."
+      show_as_sidebar: "Wenn diese Option aktiviert ist, werden die hervorgehobenen Kategorien nur in einer Seitenleiste auf der Seite „Aktuell“ angezeigt."
       feed_one_title: "Titel für den ersten Themen-Feed"
       feed_one_category: "Einzelne Kategorie, aus der Themen abgerufen werden können"
-      feed_one_tag: "Optional können Themen aus mehreren Tags stammen, dies kann mit einer Kategorie kombiniert werden"
+      feed_one_tag: "Optional können Themen aus mehreren Schlagwortsammlungen stammen. Dies kann mit einer Kategorie kombiniert werden"
       feed_two_title: "Titel für den zweiten Themen-Feed"
       feed_two_category: "Einzelne Kategorie, aus der Themen abgerufen werden können"
-      feed_two_tag: "Optional können Themen aus mehreren Tags stammen, dies kann mit einer Kategorie kombiniert werden"
-      max_list_length: "Anzahl der Themen, die in jedem Feed angezeigt werden sollen (1-5)"
+      feed_two_tag: "Optional können Themen aus mehreren Schlagwortsammlungen stammen. Dies kann mit einer Kategorie kombiniert werden"
+      max_list_length: "Anzahl der Themen, die in jedem Feed angezeigt werden sollen (1–5)"
       plugin_outlet: "Erweiterte Einstellung zum Ändern der Position der Theme-Komponente"
