@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 ar:
+  showcased_categories:
+    new_post: "منشور"
+    view_more: "المزيد"
+  theme_metadata:
+    settings:
+      show_as_sidebar: "إذا تم تفعيل هذا الخيار، فسيتم عرض الفئات المعروضة في شريط جانبي على الصفحة الأخيرة فقط."
+      feed_one_title: "عنوان أول موجز للموضوعات"
+      feed_one_category: "فئة واحدة لاستمداد الموضوعات منها"
+      feed_one_tag: "استمداد الموضوعات اختياريًا من عدة وسوم، ويمكن دمجها مع فئة"
+      feed_two_title: "عنوان ثاني موجز للموضوعات"
+      feed_two_category: "فئة واحدة لاستمداد الموضوعات منها"
+      feed_two_tag: "استمداد الموضوعات اختياريًا من عدة وسوم، ويمكن دمجها مع فئة"
+      max_list_length: "عدد الموضوعات التي سيتم عرضها في كل موجز (1-5)"
+      plugin_outlet: "إعداد متقدم لتغيير موضع مكوِّن السمة"

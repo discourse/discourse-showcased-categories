@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 ja:
+  showcased_categories:
+    new_post: "投稿"
+    view_more: "さらに表示"
+  theme_metadata:
+    settings:
+      show_as_sidebar: "有効にすると、紹介されたカテゴリは最新のページのサイドバーにのみ表示されます。"
+      feed_one_title: "トピックの最初のフィードのタイトル"
+      feed_one_category: "トピックのソースとなる単一のカテゴリ"
+      feed_one_tag: "オプションで、複数のタグからトピックを取得し、カテゴリを組み合わせることができます"
+      feed_two_title: "トピックの 2 番目のフィードのタイトル"
+      feed_two_category: "トピックのソースとなる単一のカテゴリ"
+      feed_two_tag: "オプションで、複数のタグからトピックを取得し、カテゴリを組み合わせることができます"
+      max_list_length: "各フィードに表示するトピック数 (1～5)"
+      plugin_outlet: "テーマコンポーネントの位置を変更する高度な設定"
