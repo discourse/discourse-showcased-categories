@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 fi:
+  showcased_categories:
+    new_post: "Viesti"
+    view_more: "Lisää"
+  theme_metadata:
+    settings:
+      show_as_sidebar: "Jos tämä on käytössä, esitellyt alueet hahmonnetaan vain viimeisimmän sivun sivupalkissa."
+      feed_one_title: "Ketjujen ensimmäisen syötteen otsikko"
+      feed_one_category: "Yksittäinen alue, josta ketjut haetaan"
+      feed_one_tag: "Ketjuja voidaan valinnaisesti hakea useista tunnisteista, voidaan yhdistää alueeseen"
+      feed_two_title: "Ketjujen toisen syötteen otsikko"
+      feed_two_category: "Yksittäinen alue, josta ketjut haetaan"
+      feed_two_tag: "Ketjuja voidaan valinnaisesti hakea useista tunnisteista, voidaan yhdistää alueeseen"
+      max_list_length: "Kussakin syötteessä näytettävien ketjujen määrä (1–5)"
+      plugin_outlet: "Lisäasetus teemakomponentin sijainnin muuttamiseksi"

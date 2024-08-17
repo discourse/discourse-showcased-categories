@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 it:
+  showcased_categories:
+    new_post: "Messaggio"
+    view_more: "Altro"
+  theme_metadata:
+    settings:
+      show_as_sidebar: "Se l'opzione è abilitata, le categorie visualizzate verranno visualizzate solo in una barra laterale nella pagina più recente."
+      feed_one_title: "Titolo per il primo feed di argomenti"
+      feed_one_category: "Categoria singola da cui attingere gli argomenti"
+      feed_one_tag: "Facoltativamente gli argomenti provengono da più etichette, possono essere combinati con una categoria"
+      feed_two_title: "Titolo per il secondo feed di argomenti"
+      feed_two_category: "Categoria singola da cui attingere gli argomenti"
+      feed_two_tag: "Facoltativamente gli argomenti provengono da più etichette, possono essere combinati con una categoria"
+      max_list_length: "Numero di argomenti da mostrare in ogni feed (1-5)"
+      plugin_outlet: "Impostazioni avanzate per modificare la posizione del componente del tema"
