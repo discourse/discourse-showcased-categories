@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 pt_BR:
+  showcased_categories:
+    new_post: "Postagem"
+    view_more: "Mais"
+  theme_metadata:
+    settings:
+      show_as_sidebar: "Se ativado, as categorias exibidas serão renderizadas numa barra lateral na página de tópicos mais recentes."
+      feed_one_title: "Título para o primeiro feed de tópicos"
+      feed_one_category: "Categoria única para usar na busca de tópicos"
+      feed_one_tag: "Como alternativa, buscar tópicos a partir de várias etiquetas, que podem ser combinadas com uma categoria"
+      feed_two_title: "Título para o segundo feed de tópicos"
+      feed_two_category: "Categoria única para usar na busca de tópicos"
+      feed_two_tag: "Como alternativa, buscar tópicos a partir de várias etiquetas, que podem ser combinadas com uma categoria"
+      max_list_length: "Quantidade de tópicos a serem exibidos em cada feed (1-5)"
+      plugin_outlet: "Configuração avançada para mudança de posição do componente do tema"

@@ -5,3 +5,17 @@
 # https://translate.discourse.org/
 
 nl:
+  showcased_categories:
+    new_post: "Bericht"
+    view_more: "Meer"
+  theme_metadata:
+    settings:
+      show_as_sidebar: "Als dit is ingeschakeld, worden de uitgelichte categorieën alleen weergegeven in een zijbalk op de laatste pagina."
+      feed_one_title: "Titel voor eerste feed van topics"
+      feed_one_category: "Eén categorie om topics uit te halen"
+      feed_one_tag: "Haal optioneel topics van meerdere tags, kan worden gecombineerd met een categorie"
+      feed_two_title: "Titel voor tweede feed van topics"
+      feed_two_category: "Eén categorie om topics uit te halen"
+      feed_two_tag: "Haal optioneel topics van meerdere tags, kan worden gecombineerd met een categorie"
+      max_list_length: "Aantal topics dat in elke feed moet worden weergegeven (1-5)"
+      plugin_outlet: "Geavanceerde instelling voor het wijzigen van de positie van de themacomponent"
