@@ -5,18 +5,16 @@ RSpec.describe "Showcased Categories", system: true do
 
   fab!(:user)
 
-  fab!(:category1) { Fabricate(:category)}
-  fab!(:category2) { Fabricate(:category)}
+  fab!(:category1) { Fabricate(:category) }
+  fab!(:category2) { Fabricate(:category) }
 
   fab!(:tag1) { Fabricate(:tag, name: "rhino") }
   fab!(:tag2) { Fabricate(:tag, name: "gorilla") }
 
-  fab!(:topic1) { Fabricate(:topic, category: category1, tags: [tag1])}
-  fab!(:topic2) { Fabricate(:topic, category: category2, tags: [tag2])}
+  fab!(:topic1) { Fabricate(:topic, category: category1, tags: [tag1]) }
+  fab!(:topic2) { Fabricate(:topic, category: category2, tags: [tag2]) }
 
-  before do 
-    sign_in(user)
-  end
+  before { sign_in(user) }
 
   it "topic feeds appear when categories are configured without tags" do
     theme.update_setting(:feed_one_category, "#{category1.id}")
@@ -56,7 +54,7 @@ RSpec.describe "Showcased Categories", system: true do
     theme.save!
 
     visit("/")
-    
+
     expect(page).to have_no_css(".custom-homepage-columns")
   end
 
@@ -65,7 +63,7 @@ RSpec.describe "Showcased Categories", system: true do
     theme.save!
 
     visit("/")
-    
+
     expect(page).to have_no_css(".custom-homepage-columns")
   end
 
@@ -75,7 +73,7 @@ RSpec.describe "Showcased Categories", system: true do
     theme.save!
 
     visit("/top")
-    
+
     expect(page).to have_no_css(".custom-homepage-columns")
   end
 
@@ -99,7 +97,7 @@ RSpec.describe "Showcased Categories", system: true do
 
     visit("/")
 
-    find(".col-1 .btn-primary").click 
+    find(".col-1 .btn-primary").click
 
     expect(page).to have_css("#reply-control")
   end
@@ -111,8 +109,8 @@ RSpec.describe "Showcased Categories", system: true do
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: category1.url})
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: category2.url})
+    expect(page).to have_tag("a", with: { class: "btn btn-more", href: category1.url })
+    expect(page).to have_tag("a", with: { class: "btn btn-more", href: category2.url })
   end
 
   it "the more button href is for a tag page" do
@@ -122,8 +120,8 @@ RSpec.describe "Showcased Categories", system: true do
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag1}"})
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag2}"})
+    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag1}" })
+    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag2}" })
   end
 
   it "the more button href is for a tag page with category set" do
@@ -134,7 +132,13 @@ RSpec.describe "Showcased Categories", system: true do
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1}"})
+    expect(page).to have_tag(
+      "a",
+      with: {
+        class: "btn btn-more",
+        href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1}",
+      },
+    )
   end
 
   it "the more button href is for search with multiple tags" do
@@ -144,7 +148,13 @@ RSpec.describe "Showcased Categories", system: true do
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/search?expanded=true&q=tags%3A#{tag1}%2C#{tag2}"})
+    expect(page).to have_tag(
+      "a",
+      with: {
+        class: "btn btn-more",
+        href: "/search?expanded=true&q=tags%3A#{tag1}%2C#{tag2}",
+      },
+    )
   end
 
   it "the more button href is for search with category and tags" do
@@ -156,7 +166,12 @@ RSpec.describe "Showcased Categories", system: true do
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/search?expanded=true&q=%23#{category1.slug} tags%3A#{tag1}%2C#{tag2}"})
+    expect(page).to have_tag(
+      "a",
+      with: {
+        class: "btn btn-more",
+        href: "/search?expanded=true&q=%23#{category1.slug} tags%3A#{tag1}%2C#{tag2}",
+      },
+    )
   end
- 
 end
