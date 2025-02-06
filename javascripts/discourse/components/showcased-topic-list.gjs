@@ -3,9 +3,9 @@ import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import didInsert from "@ember/render-modifiers/modifiers/did-insert";
 import { service } from "@ember/service";
+import BasicTopicList from "discourse/components/basic-topic-list";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import DButton from "discourse/components/d-button";
-import TopicList from "discourse/components/topic-list";
 import Composer from "discourse/models/composer";
 import i18n from "discourse-common/helpers/i18n";
 
@@ -88,7 +88,7 @@ export default class ShowcasedTopicList extends Component {
     </div>
 
     <ConditionalLoadingSpinner @condition={{this.isLoading}}>
-      <TopicList @topics={{this.topicList}} @showPosters="false" />
+      <BasicTopicList @topics={{this.topicList}} @showPosters="false" />
     </ConditionalLoadingSpinner>
 
     <a href={{this.moreHref}} class="btn btn-more">
