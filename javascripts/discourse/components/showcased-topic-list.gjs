@@ -7,7 +7,7 @@ import ConditionalLoadingSpinner from "discourse/components/conditional-loading-
 import DButton from "discourse/components/d-button";
 import TopicList from "discourse/components/topic-list";
 import Composer from "discourse/models/composer";
-import i18n from "discourse-common/helpers/i18n";
+import { i18n } from "discourse-i18n";
 
 export default class ShowcasedTopicList extends Component {
   @service store;
