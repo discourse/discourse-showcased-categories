@@ -24,14 +24,14 @@ export default class ShowcasedTopicList extends Component {
     const encodedTags = this.tags ? this.tags.join("%2C") : "";
 
     if (this.category && !this.tags) {
-      return this.category.url;
+      return this.category.url + "/l/" + settings.filter;
     } else if (!this.category && this.tags) {
       return this.tags.length > 1
         ? `/search?expanded=true&q=tags%3A${encodedTags}`
-        : `/tag/${this.tags[0]}`;
+        : `/tag/${this.tags[0]}/l/${settings.filter}`;
     } else if (this.category && this.tags) {
       return this.tags.length === 1
-        ? `/tags/c/${this.category.slug}/${this.category.id}/${this.tags[0]}`
+        ? `/tags/c/${this.category.slug}/${this.category.id}/${this.tags[0]}/l/${settings.filter}`
         : `/search?expanded=true&q=%23${this.category.slug} tags%3A${encodedTags}`;
     } else {
       return "";
@@ -45,7 +45,7 @@ export default class ShowcasedTopicList extends Component {
     }
 
     const filter = {
-      filter: "latest",
+      filter: settings.filter,
       params: {
         category: this.category?.id,
         tags: this.tags,
