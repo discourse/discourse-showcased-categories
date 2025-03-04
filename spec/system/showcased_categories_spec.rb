@@ -109,8 +109,20 @@ RSpec.describe "Showcased Categories", system: true do
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "#{category1.url}/l/latest"})
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "#{category2.url}/l/latest"})
+    expect(page).to have_tag(
+      "a",
+      with: {
+        class: "btn btn-more",
+        href: "#{category1.url}/l/latest",
+      },
+    )
+    expect(page).to have_tag(
+      "a",
+      with: {
+        class: "btn btn-more",
+        href: "#{category2.url}/l/latest",
+      },
+    )
   end
 
   it "the more button href is for a tag page" do
@@ -120,8 +132,8 @@ RSpec.describe "Showcased Categories", system: true do
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag1}/l/latest"})
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag2}/l/latest"})
+    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag1}/l/latest" })
+    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag2}/l/latest" })
   end
 
   it "the more button href is for a tag page with category set" do
@@ -132,7 +144,13 @@ RSpec.describe "Showcased Categories", system: true do
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1}/l/latest"})
+    expect(page).to have_tag(
+      "a",
+      with: {
+        class: "btn btn-more",
+        href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1}/l/latest",
+      },
+    )
   end
 
   it "the more button href is for search with multiple tags" do
@@ -172,12 +190,11 @@ RSpec.describe "Showcased Categories", system: true do
   it "the more button href is for a category page ordered by top" do
     theme.update_setting(:feed_one_category, "#{category1.id}")
     theme.update_setting(:feed_two_category, "#{category2.id}")
-    theme.update_setting(:filter, "top")    
+    theme.update_setting(:filter, "top")
     theme.save!
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "#{category1.url}/l/top"})
+    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "#{category1.url}/l/top" })
   end
- 
 end
