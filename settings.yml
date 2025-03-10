@@ -2,6 +2,13 @@ show_as_sidebar:
   type: bool
   refresh: true
   default: false
+filter:
+  type: enum
+  default: "latest"
+  choices:
+    - "latest"
+    - "top"
+    - "hot"
 feed_one_title:
   type: string
   default: "Custom List One"
