@@ -5,3 +5,6 @@
 # https://translate.discourse.org/
 
 ro:
+  theme_metadata:
+    settings:
+      filter: "Alege filtrul de liste de subiecte pentru listele de subiecte prezentate"

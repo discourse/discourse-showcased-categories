@@ -11,6 +11,7 @@ de:
   theme_metadata:
     settings:
       show_as_sidebar: "Wenn diese Option aktiviert ist, werden die hervorgehobenen Kategorien nur in einer Seitenleiste auf der Seite „Aktuell“ angezeigt."
+      filter: "Wähle den Themenlistenfilter für die angezeigten Themenlisten"
       feed_one_title: "Titel für den ersten Themen-Feed"
       feed_one_category: "Einzelne Kategorie, aus der Themen abgerufen werden können"
       feed_one_tag: "Optional können Themen aus mehreren Schlagwortsammlungen stammen. Dies kann mit einer Kategorie kombiniert werden"
