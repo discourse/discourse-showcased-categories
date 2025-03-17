@@ -3,8 +3,10 @@
     display: grid;
     grid-template-columns: 75% 25%;
     grid-template-areas: "topics showcased";
+
     span:first-of-type {
       grid-area: showcased;
+
       + .topic-list {
         grid-area: topics;
       }
@@ -17,24 +19,30 @@
     display: flex;
     flex-direction: column;
     margin: 3.5em 0 0 1em;
+
     .col {
       width: 100%;
       display: flex;
       flex-direction: column;
+
       .header-wrapper {
         align-items: center;
+
         h2 {
           font-size: var(--font-down-1);
           margin: 0 !important; // overrides id selector from core
         }
+
         .btn-primary {
           font-size: var(--font-down-1);
           padding: 0.25em 0.4em;
         }
       }
+
       .topic-list {
         font-size: var(--font-down-2);
       }
+
       .btn-more {
         font-size: var(--font-down-1);
         padding: 0.25em 0.4em;
