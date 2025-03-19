@@ -16,6 +16,7 @@
   .discourse-tags {
     display: none;
   }
+
   .num.likes {
     display: none;
   }
@@ -30,6 +31,7 @@
 
   .col {
     width: 50%;
+
     @media screen and (max-width: 750px) {
       width: 100%;
     }
@@ -41,10 +43,12 @@
     background-color: var(--tertiary);
     color: var(--secondary);
     padding: 0.75em;
+
     a h2 {
       margin: 0;
       color: var(--secondary);
     }
+
     button {
       margin-left: auto;
       border: none;
@@ -56,29 +60,36 @@
   .topic-list {
     // Hides extra details in topic feeds
     margin-bottom: 1em;
+
     > .topic-list-header,
     .posts-map,
     .num.posts,
     .num.views {
       display: none;
     }
+
     > .topic-list-body {
       border: none;
     }
+
     .topic-list-item:nth-child(odd) {
       background: var(--primary-very-low);
     }
+
     .topic-list-item {
       height: var(--topic-height);
     }
+
     .posters {
       a {
         display: none;
+
         &:last-of-type {
           display: inline-block;
         }
       }
     }
+
     .main-link {
       width: 80%;
     }
