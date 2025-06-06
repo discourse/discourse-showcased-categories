@@ -25,14 +25,14 @@
     min-height: calc(var(--topic-height) * 3);
   }
 
-  @media screen and (max-width: 750px) {
+  @media screen and (width <= 750px) {
     flex-wrap: wrap;
   }
 
   .col {
     width: 50%;
 
-    @media screen and (max-width: 750px) {
+    @media screen and (width <= 750px) {
       width: 100%;
     }
   }
