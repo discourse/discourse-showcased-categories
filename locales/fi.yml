@@ -11,6 +11,7 @@ fi:
   theme_metadata:
     settings:
       show_as_sidebar: "Jos tämä on käytössä, esitellyt alueet hahmonnetaan vain viimeisimmän sivun sivupalkissa."
+      filter: "Valitse ketjuluettelosuodatin esitellyille ketjuluetteloille"
       feed_one_title: "Ketjujen ensimmäisen syötteen otsikko"
       feed_one_category: "Yksittäinen alue, josta ketjut haetaan"
       feed_one_tag: "Ketjuja voidaan valinnaisesti hakea useista tunnisteista, voidaan yhdistää alueeseen"

@@ -11,6 +11,7 @@ es:
   theme_metadata:
     settings:
       show_as_sidebar: "Si se activa, las categorías mostradas solo se mostrarán en una barra lateral en la última página."
+      filter: "Selecciona el filtro de la lista de temas para las listas de temas mostradas"
       feed_one_title: "Título del primer feed de temas"
       feed_one_category: "Categoría única de la que extraer temas"
       feed_one_tag: "Temas de origen opcionales de varias etiquetas, pueden combinarse con una categoría"

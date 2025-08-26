@@ -11,6 +11,7 @@ it:
   theme_metadata:
     settings:
       show_as_sidebar: "Se l'opzione è abilitata, le categorie visualizzate verranno visualizzate solo in una barra laterale nella pagina più recente."
+      filter: "Scegli il filtro dell'elenco degli argomenti per gli elenchi degli argomenti in evidenza"
       feed_one_title: "Titolo per il primo feed di argomenti"
       feed_one_category: "Categoria singola da cui attingere gli argomenti"
       feed_one_tag: "Facoltativamente gli argomenti provengono da più etichette, possono essere combinati con una categoria"
