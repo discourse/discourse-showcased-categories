@@ -11,6 +11,7 @@ fr:
   theme_metadata:
     settings:
       show_as_sidebar: "Si cette option est activée, les catégories présentées ne seront affichées que dans une barre latérale sur la dernière page."
+      filter: "Choisissez le filtre de liste de sujets pour les listes de sujets présentées"
       feed_one_title: "Titre du premier fil de sujets"
       feed_one_category: "Catégorie unique pour la recherche de sujets"
       feed_one_tag: "Vous pouvez sélectionner des sujets à partir de plusieurs étiquettes et les combiner avec une catégorie"
