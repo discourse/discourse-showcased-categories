@@ -11,6 +11,7 @@ zh_CN:
   theme_metadata:
     settings:
       show_as_sidebar: "如果启用，展示的类别将仅在最新页面的边栏中呈现。"
+      filter: "选择展示话题列表的话题列表筛选器"
       feed_one_title: "话题的第一个 Feed 的标题"
       feed_one_category: "可从中获取话题来源的单个类别"
       feed_one_tag: "可以选择从多个标签获取话题来源，并且可以与类别相结合"

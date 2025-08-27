@@ -11,6 +11,7 @@ tr_TR:
   theme_metadata:
     settings:
       show_as_sidebar: "Etkinleştirilirse gösterilen kategoriler yalnızca en son sayfadaki bir kenar çubuğunda oluşturulur."
+      filter: "Gösterilen konu listeleri için konu listesi filtresini seçin"
       feed_one_title: "Konuların ilk akışı için başlık"
       feed_one_category: "Konuların kaynaklandırılacağı tek kategori"
       feed_one_tag: "İsteğe bağlı olarak birden fazla etiketten kaynak konuları, bir kategoriyle birleştirilebilir"

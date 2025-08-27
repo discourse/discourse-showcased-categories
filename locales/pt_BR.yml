@@ -11,6 +11,7 @@ pt_BR:
   theme_metadata:
     settings:
       show_as_sidebar: "Se ativado, as categorias exibidas serão renderizadas numa barra lateral na página de tópicos mais recentes."
+      filter: "Escolha o filtro da lista de tópicos para as listas de tópicos exibidas"
       feed_one_title: "Título para o primeiro feed de tópicos"
       feed_one_category: "Categoria única para usar na busca de tópicos"
       feed_one_tag: "Como alternativa, buscar tópicos a partir de várias etiquetas, que podem ser combinadas com uma categoria"
