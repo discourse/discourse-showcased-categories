@@ -11,6 +11,7 @@ nl:
   theme_metadata:
     settings:
       show_as_sidebar: "Als dit is ingeschakeld, worden de uitgelichte categorieën alleen weergegeven in een zijbalk op de laatste pagina."
+      filter: "Kies het topiclijstfilter voor de getoonde topiclijsten"
       feed_one_title: "Titel voor eerste feed van topics"
       feed_one_category: "Eén categorie om topics uit te halen"
       feed_one_tag: "Haal optioneel topics van meerdere tags, kan worden gecombineerd met een categorie"
