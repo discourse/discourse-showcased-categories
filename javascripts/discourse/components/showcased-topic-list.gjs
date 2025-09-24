@@ -91,7 +91,7 @@ export default class ShowcasedTopicList extends Component {
       <BasicTopicList @topics={{this.topicList}} @showPosters="false" />
     </ConditionalLoadingSpinner>
 
-    <a href={{this.moreHref}} class="btn btn-more">
+    <a href={{this.moreHref}} class="btn btn-default btn-more">
       {{i18n (themePrefix "showcased_categories.view_more")}}
     </a>
   </template>
