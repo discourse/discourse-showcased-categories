@@ -1,7 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 import TwoTopicList from "../components/two-topic-list";
 
-export default apiInitializer("1.14.0", (api) => {
+export default apiInitializer((api) => {
   let outlet = settings.plugin_outlet;
 
   if (settings.show_as_sidebar) {

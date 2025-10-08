@@ -5,8 +5,8 @@ RSpec.describe "Showcased Categories", system: true do
 
   fab!(:user)
 
-  fab!(:category1) { Fabricate(:category) }
-  fab!(:category2) { Fabricate(:category) }
+  fab!(:category1, :category)
+  fab!(:category2, :category)
 
   fab!(:tag1) { Fabricate(:tag, name: "rhino") }
   fab!(:tag2) { Fabricate(:tag, name: "gorilla") }
