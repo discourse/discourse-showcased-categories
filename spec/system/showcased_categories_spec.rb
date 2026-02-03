@@ -160,7 +160,7 @@ RSpec.describe "Showcased Categories", system: true do
       "a",
       with: {
         class: "btn btn-more",
-        href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1.id}/l/latest",
+        href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1.name}/#{tag1.id}/l/latest",
       },
     )
   end

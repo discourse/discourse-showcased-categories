@@ -6,6 +6,7 @@ import { service } from "@ember/service";
 import BasicTopicList from "discourse/components/basic-topic-list";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import DButton from "discourse/components/d-button";
+import { getCategoryAndTagUrl } from "discourse/lib/url";
 import Composer from "discourse/models/composer";
 import { i18n } from "discourse-i18n";
 
@@ -35,13 +36,17 @@ export default class ShowcasedTopicList extends Component {
       if (!tag) {
         return "";
       }
-      return `${tag.url}/l/${settings.filter}`;
+      return getCategoryAndTagUrl(null, null, tag) + "/l/" + settings.filter;
     } else if (this.category && tagNames) {
       if (tagNames.length === 1) {
         if (!tag) {
           return "";
         }
-        return `/tags/c/${this.category.slug}/${this.category.id}/${tag.id}/l/${settings.filter}`;
+        return (
+          getCategoryAndTagUrl(this.category, true, tag) +
+          "/l/" +
+          settings.filter
+        );
       }
       return `/search?expanded=true&q=%23${this.category.slug} tags%3A${encodedTags}`;
     } else {
