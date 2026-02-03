@@ -126,19 +126,31 @@ RSpec.describe "Showcased Categories", system: true do
   end
 
   it "the more button href is for a tag page" do
-    theme.update_setting(:feed_one_tag, "#{tag1}")
-    theme.update_setting(:feed_two_tag, "#{tag2}")
+    theme.update_setting(:feed_one_tag, "#{tag1.name}")
+    theme.update_setting(:feed_two_tag, "#{tag2.name}")
     theme.save!
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag1}/l/latest" })
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag2}/l/latest" })
+    expect(page).to have_tag(
+      "a",
+      with: {
+        class: "btn btn-more",
+        href: "/tag/#{tag1.name}/#{tag1.id}/l/latest",
+      },
+    )
+    expect(page).to have_tag(
+      "a",
+      with: {
+        class: "btn btn-more",
+        href: "/tag/#{tag2.name}/#{tag2.id}/l/latest",
+      },
+    )
   end
 
   it "the more button href is for a tag page with category set" do
     theme.update_setting(:feed_one_category, "#{category1.id}")
-    theme.update_setting(:feed_one_tag, "#{tag1}")
+    theme.update_setting(:feed_one_tag, "#{tag1.name}")
     theme.update_setting(:feed_two_category, "#{category2.id}")
     theme.save!
 
@@ -148,7 +160,7 @@ RSpec.describe "Showcased Categories", system: true do
       "a",
       with: {
         class: "btn btn-more",
-        href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1}/l/latest",
+        href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1.id}/l/latest",
       },
     )
   end
