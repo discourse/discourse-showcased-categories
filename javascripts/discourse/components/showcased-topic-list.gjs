@@ -28,7 +28,7 @@ export default class ShowcasedTopicList extends Component {
     const tag = this.resolvedTags[0];
 
     if (this.category && !tagNames) {
-      return this.category.url + "/l/" + settings.filter;
+      return `${this.category.url}/l/${settings.filter}`;
     } else if (!this.category && tagNames) {
       if (tagNames.length > 1) {
         return `/search?expanded=true&q=tags%3A${encodedTags}`;
@@ -36,17 +36,13 @@ export default class ShowcasedTopicList extends Component {
       if (!tag) {
         return "";
       }
-      return getCategoryAndTagUrl(null, null, tag) + "/l/" + settings.filter;
+      return `${getCategoryAndTagUrl(null, null, tag)}/l/${settings.filter}`;
     } else if (this.category && tagNames) {
       if (tagNames.length === 1) {
         if (!tag) {
           return "";
         }
-        return (
-          getCategoryAndTagUrl(this.category, true, tag) +
-          "/l/" +
-          settings.filter
-        );
+        return `${getCategoryAndTagUrl(this.category, true, tag)}/l/${settings.filter}`;
       }
       return `/search?expanded=true&q=%23${this.category.slug} tags%3A${encodedTags}`;
     } else {
