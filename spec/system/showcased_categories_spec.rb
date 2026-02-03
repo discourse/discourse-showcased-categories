@@ -136,14 +136,14 @@ RSpec.describe "Showcased Categories", system: true do
       "a",
       with: {
         class: "btn btn-more",
-        href: "/tag/#{tag1.name}/#{tag1.id}/l/latest",
+        href: "/tag/#{tag1.slug}/#{tag1.id}/l/latest",
       },
     )
     expect(page).to have_tag(
       "a",
       with: {
         class: "btn btn-more",
-        href: "/tag/#{tag2.name}/#{tag2.id}/l/latest",
+        href: "/tag/#{tag2.slug}/#{tag2.id}/l/latest",
       },
     )
   end
@@ -160,7 +160,7 @@ RSpec.describe "Showcased Categories", system: true do
       "a",
       with: {
         class: "btn btn-more",
-        href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1.name}/#{tag1.id}/l/latest",
+        href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1.slug}/#{tag1.id}/l/latest",
       },
     )
   end
