@@ -6,6 +6,7 @@ import { service } from "@ember/service";
 import BasicTopicList from "discourse/components/basic-topic-list";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import DButton from "discourse/components/d-button";
+import { getCategoryAndTagUrl } from "discourse/lib/url";
 import Composer from "discourse/models/composer";
 import { i18n } from "discourse-i18n";
 
@@ -17,22 +18,33 @@ export default class ShowcasedTopicList extends Component {
 
   @tracked isLoading = true;
   @tracked topicList;
-  tags = this.args.tags.length > 0 ? this.args.tags : "";
+  @tracked resolvedTags = [];
+  tagNames = this.args.tags.length > 0 ? this.args.tags : "";
   category = this.args.category;
 
   get moreHref() {
-    const encodedTags = this.tags ? this.tags.join("%2C") : "";
+    const tagNames = this.tagNames;
+    const encodedTags = tagNames ? tagNames.join("%2C") : "";
+    const tag = this.resolvedTags[0];
 
-    if (this.category && !this.tags) {
-      return this.category.url + "/l/" + settings.filter;
-    } else if (!this.category && this.tags) {
-      return this.tags.length > 1
-        ? `/search?expanded=true&q=tags%3A${encodedTags}`
-        : `/tag/${this.tags[0]}/l/${settings.filter}`;
-    } else if (this.category && this.tags) {
-      return this.tags.length === 1
-        ? `/tags/c/${this.category.slug}/${this.category.id}/${this.tags[0]}/l/${settings.filter}`
-        : `/search?expanded=true&q=%23${this.category.slug} tags%3A${encodedTags}`;
+    if (this.category && !tagNames) {
+      return `${this.category.url}/l/${settings.filter}`;
+    } else if (!this.category && tagNames) {
+      if (tagNames.length > 1) {
+        return `/search?expanded=true&q=tags%3A${encodedTags}`;
+      }
+      if (!tag) {
+        return "";
+      }
+      return `${getCategoryAndTagUrl(null, null, tag)}/l/${settings.filter}`;
+    } else if (this.category && tagNames) {
+      if (tagNames.length === 1) {
+        if (!tag) {
+          return "";
+        }
+        return `${getCategoryAndTagUrl(this.category, true, tag)}/l/${settings.filter}`;
+      }
+      return `/search?expanded=true&q=%23${this.category.slug} tags%3A${encodedTags}`;
     } else {
       return "";
     }
@@ -40,7 +52,7 @@ export default class ShowcasedTopicList extends Component {
 
   @action
   async getTopics() {
-    if (!this.category && !this.tags) {
+    if (!this.category && !this.tagNames) {
       return;
     }
 
@@ -48,11 +60,20 @@ export default class ShowcasedTopicList extends Component {
       filter: settings.filter,
       params: {
         category: this.category?.id,
-        tags: this.tags,
+        tags: this.tagNames,
       },
     };
 
     try {
+      if (this.tagNames?.length > 0) {
+        const listTags = await this.store.findAll("listTag", {
+          only_tags: this.tagNames.join(","),
+        });
+        this.resolvedTags = (listTags.content || []).map((t) =>
+          this.store.createRecord("tag", t)
+        );
+      }
+
       const topicList = await this.store.findFiltered("topicList", filter);
       this.topicList = topicList.topics.slice(0, settings.max_list_length);
     } catch (error) {
@@ -70,7 +91,7 @@ export default class ShowcasedTopicList extends Component {
         action: Composer.CREATE_TOPIC,
         draftKey: Composer.NEW_TOPIC_KEY,
         categoryId: this.category?.id,
-        tags: this.tags,
+        tags: this.tagNames,
       });
     } else {
       this.router.transitionTo("login");
