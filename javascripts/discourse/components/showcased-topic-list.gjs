@@ -24,7 +24,7 @@ export default class ShowcasedTopicList extends Component {
     const encodedTags = this.tags ? this.tags.join("%2C") : "";
 
     if (this.category && !this.tags) {
-      return this.category.url + "/l/" + settings.filter;
+      return `${this.category.url}/l/${settings.filter}`;
     } else if (!this.category && this.tags) {
       return this.tags.length > 1
         ? `/search?expanded=true&q=tags%3A${encodedTags}`

@@ -27,8 +27,8 @@ RSpec.describe "Showcased Categories", system: true do
   end
 
   it "topic feeds appear when tags are configured without categories" do
-    theme.update_setting(:feed_one_tag, "#{tag1}")
-    theme.update_setting(:feed_two_tag, "#{tag2}")
+    theme.update_setting(:feed_one_tag, tag1.name)
+    theme.update_setting(:feed_two_tag, tag2.name)
     theme.save!
 
     visit("/")
@@ -39,8 +39,8 @@ RSpec.describe "Showcased Categories", system: true do
   it "topic feeds appear when both categories and tags are configured" do
     theme.update_setting(:feed_one_category, "#{category1.id}")
     theme.update_setting(:feed_two_category, "#{category2.id}")
-    theme.update_setting(:feed_one_tag, "#{tag1}")
-    theme.update_setting(:feed_two_tag, "#{tag2}")
+    theme.update_setting(:feed_one_tag, tag1.name)
+    theme.update_setting(:feed_two_tag, tag2.name)
     theme.save!
 
     visit("/")
@@ -59,7 +59,7 @@ RSpec.describe "Showcased Categories", system: true do
   end
 
   it "topic feed does not appear when one tag is configured" do
-    theme.update_setting(:feed_one_tag, "#{tag1}")
+    theme.update_setting(:feed_one_tag, tag1.name)
     theme.save!
 
     visit("/")
@@ -68,8 +68,8 @@ RSpec.describe "Showcased Categories", system: true do
   end
 
   it "topic feed does not appear outside of the homepage" do
-    theme.update_setting(:feed_one_tag, "#{tag1}")
-    theme.update_setting(:feed_two_tag, "#{tag2}")
+    theme.update_setting(:feed_one_tag, tag1.name)
+    theme.update_setting(:feed_two_tag, tag2.name)
     theme.save!
 
     visit("/top")
@@ -91,8 +91,8 @@ RSpec.describe "Showcased Categories", system: true do
   it "the post button opens the composer" do
     theme.update_setting(:feed_one_category, "#{category1.id}")
     theme.update_setting(:feed_two_category, "#{category2.id}")
-    theme.update_setting(:feed_one_tag, "#{tag1}")
-    theme.update_setting(:feed_two_tag, "#{tag2}")
+    theme.update_setting(:feed_one_tag, tag1.name)
+    theme.update_setting(:feed_two_tag, tag2.name)
     theme.save!
 
     visit("/")
@@ -126,19 +126,31 @@ RSpec.describe "Showcased Categories", system: true do
   end
 
   it "the more button href is for a tag page" do
-    theme.update_setting(:feed_one_tag, "#{tag1}")
-    theme.update_setting(:feed_two_tag, "#{tag2}")
+    theme.update_setting(:feed_one_tag, tag1.name)
+    theme.update_setting(:feed_two_tag, tag2.name)
     theme.save!
 
     visit("/")
 
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag1}/l/latest" })
-    expect(page).to have_tag("a", with: { class: "btn btn-more", href: "/tag/#{tag2}/l/latest" })
+    expect(page).to have_tag(
+      "a",
+      with: {
+        class: "btn btn-more",
+        href: "/tag/#{tag1.name}/l/latest",
+      },
+    )
+    expect(page).to have_tag(
+      "a",
+      with: {
+        class: "btn btn-more",
+        href: "/tag/#{tag2.name}/l/latest",
+      },
+    )
   end
 
   it "the more button href is for a tag page with category set" do
     theme.update_setting(:feed_one_category, "#{category1.id}")
-    theme.update_setting(:feed_one_tag, "#{tag1}")
+    theme.update_setting(:feed_one_tag, tag1.name)
     theme.update_setting(:feed_two_category, "#{category2.id}")
     theme.save!
 
@@ -148,14 +160,14 @@ RSpec.describe "Showcased Categories", system: true do
       "a",
       with: {
         class: "btn btn-more",
-        href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1}/l/latest",
+        href: "/tags/c/#{category1.slug}/#{category1.id}/#{tag1.name}/l/latest",
       },
     )
   end
 
   it "the more button href is for search with multiple tags" do
-    theme.update_setting(:feed_one_tag, "#{tag1}|#{tag2}")
-    theme.update_setting(:feed_two_tag, "#{tag2}|#{tag1}")
+    theme.update_setting(:feed_one_tag, "#{tag1.name}|#{tag2.name}")
+    theme.update_setting(:feed_two_tag, "#{tag2.name}|#{tag1.name}")
     theme.save!
 
     visit("/")
@@ -164,7 +176,7 @@ RSpec.describe "Showcased Categories", system: true do
       "a",
       with: {
         class: "btn btn-more",
-        href: "/search?expanded=true&q=tags%3A#{tag1}%2C#{tag2}",
+        href: "/search?expanded=true&q=tags%3A#{tag1.name}%2C#{tag2.name}",
       },
     )
   end
@@ -172,8 +184,8 @@ RSpec.describe "Showcased Categories", system: true do
   it "the more button href is for search with category and tags" do
     theme.update_setting(:feed_one_category, "#{category1.id}")
     theme.update_setting(:feed_two_category, "#{category2.id}")
-    theme.update_setting(:feed_one_tag, "#{tag1}|#{tag2}")
-    theme.update_setting(:feed_two_tag, "#{tag2}|#{tag1}")
+    theme.update_setting(:feed_one_tag, "#{tag1.name}|#{tag2.name}")
+    theme.update_setting(:feed_two_tag, "#{tag2.name}|#{tag1.name}")
     theme.save!
 
     visit("/")
@@ -182,7 +194,7 @@ RSpec.describe "Showcased Categories", system: true do
       "a",
       with: {
         class: "btn btn-more",
-        href: "/search?expanded=true&q=%23#{category1.slug} tags%3A#{tag1}%2C#{tag2}",
+        href: "/search?expanded=true&q=%23#{category1.slug} tags%3A#{tag1.name}%2C#{tag2.name}",
       },
     )
   end
